@@ -3,7 +3,7 @@ const path= require('path');
 const compression = require('compression')
 const cors = require('cors');
 const server = express();
-server.use(compression);
+server.use(compression({threshold: 0}));
 server.use(cors());
 
 server.get('/games', (req, res) => {
