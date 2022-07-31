@@ -1,6 +1,6 @@
 const express = require('express');
 const path= require('path');
-var cors = require('cors');
+const cors = require('cors');
 const server = express();
 server.use(cors({
     origin: '*'
@@ -11,4 +11,4 @@ server.get('/games', (req, res) => {
 })
 
 const port = 8000;
-server.listen(port);
+server.listen(process.env.PORT || port);
