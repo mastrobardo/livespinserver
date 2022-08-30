@@ -28,6 +28,9 @@ stages:
     displayName: Build
     pool:
       vmImage: $(vmImageName)
+    steps:
+    - checkout: self
+      persistCredentials: true
 
     steps:
     - task: NodeTool@0
