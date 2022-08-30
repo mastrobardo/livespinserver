@@ -20,9 +20,6 @@ variables:
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
-steps:
-- checkout: self
-  persistCredentials: true
 
 stages:
 - stage: Build
