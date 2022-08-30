@@ -20,6 +20,10 @@ variables:
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
+steps:
+- checkout: self
+  persistCredentials: true
+
 stages:
 - stage: Build
   displayName: Build stage
@@ -28,9 +32,6 @@ stages:
     displayName: Build
     pool:
       vmImage: $(vmImageName)
-    steps:
-    - checkout: self
-      persistCredentials: true
 
     steps:
     - task: NodeTool@0
